@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href={{url_for( 'static', filename='style.css' )}} rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li> <a href="/auth/logout">Logout</a></li>
+            <li><a class="registerbtn" href="/user/profile">Profile</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <form action="/user/create" method="post" enctype="multipart/form-data">
+
+            <h1>Welcome</h1>
+            <p>Please Create Your Profile</p>
+
+            <p class="error"></p>
+
+            <label for="fullname"><b>Full Name</b></label>
+            <input id="fullname" name="fullname" required type="text" value="{{fullname}}">
+
+
+            <label for="phone"><b>Phone</b></label>
+            <input id="phone" name="phone" required type="number" value="{{phone}}">
+
+            <label for="address"><b>Address</b></label>
+            <input id="address" name="address" required type="text" value="{{address}}">
+
+            <label for="skills"><b>Skills</b></label>
+            <input id="skills" name="skills" required type="text" value="{{skills}}">
+
+            <label for="education"><b>Education</b></label>
+            <input id="education" name="education" required type="text" value="{{education}}">
+
+
+            <label for="certifications"><b>Certifications</b></label>
+            <input id="certifications" name="certifications" required type="text" value="{{certifications}}">
+
+            <label for="photo"><b>Profile Photo</b></label>
+            <input type="file" id="photo" name="photo">
+            <hr>
+            <button class="btn" type="submit">Submit</button>
+    </div>
+    <script src={{url_for( 'static', filename='app.js' )}}></script>
+    </form>
+</body>
+
+</html>
